@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Resistor — Learn Academy</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A1128%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%2310B981%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-weight=%22bold%22>X</text></svg>">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../" data-page="learn">
+<div id="nav-root"></div>
+
+<div class="section-tight container">
+  <div class="crumb">
+    <a href="index.html" data-en>Learn Academy</a><a href="index.html" data-ta>கற்றல் அகாடமி</a> /
+    <span data-en>Resistor</span><span data-ta>எதிர்ப்பான்</span>
+  </div>
+  <div class="eyebrow"><span data-en>FOUNDATION · 3 OF 4</span><span data-ta>அடிப்படை · 3/4</span></div>
+  <h1><span data-en>The Resistor — Every Circuit's Traffic Controller</span><span data-ta>எதிர்ப்பான் — ஒவ்வொரு சுற்றின் போக்குவரத்து கட்டுப்படுத்தி</span></h1>
+  <p class="story-hook" data-en>It doesn't do anything exciting — it just stops everything else from breaking.</p>
+  <p class="story-hook" data-ta>அது எதுவும் சுவாரஸ்யமான வேலை செய்யாது — மற்ற அனைத்தும் உடையாமல் தடுக்கிறது.</p>
+</div>
+
+<section class="section-tight">
+  <div class="container" style="max-width:760px">
+    <p data-en>Remember the narrow pipe from the water-pipe lesson? A resistor <i>is</i> that narrow section, on purpose. It doesn't generate anything and doesn't light up — its only job is to slow down the current flowing through it, protecting whatever comes next in the loop.</p>
+    <p data-ta>நீர்க்குழாய் பாடத்தில் இருந்த குறுகிய பகுதியை நினைவுபடுத்துங்கள்? எதிர்ப்பான் என்பது <i>வேண்டுமென்றே</i> அமைக்கப்பட்ட அந்த குறுகிய பகுதி. அது எதையும் உருவாக்காது, ஒளிராது — அதன் ஒரே வேலை மின்னோட்டத்தை மெதுவாக்குவதுதான்.</p>
+
+    <p class="mt-4" data-en>Every resistor has a <b class="text-emerald">resistance value</b>, measured in Ohms (Ω) — from a few Ohms up to millions. On most resistors you'll use in this program, that value is printed as <b>colored bands</b> instead of numbers, because it's cheaper and easier to read from any angle on a tiny component.</p>
+    <p class="mt-4" data-ta>ஒவ்வொரு எதிர்ப்பானுக்கும் ஓம் (Ω) இல் அளக்கப்படும் <b class="text-emerald">எதிர்ப்பு மதிப்பு</b> உண்டு. இந்த திட்டத்தில் நீங்கள் பயன்படுத்தும் பெரும்பாலான எதிர்ப்பான்களில், அந்த மதிப்பு எண்களுக்கு பதிலாக <b>வண்ண பட்டைகளாக</b> அச்சிடப்பட்டுள்ளது.</p>
+
+    <p class="mt-4" data-en>You won't need to memorize the full color code today — for InnovateX, you'll mostly reach for one trusted value:</p>
+    <p class="mt-4" data-ta>இன்று முழு வண்ண குறியீட்டையும் மனப்பாடம் செய்ய தேவையில்லை — InnovateX-க்கு, நீங்கள் பெரும்பாலும் ஒரு நம்பகமான மதிப்பை பயன்படுத்துவீர்கள்:</p>
+
+    <div class="fact-strip">
+      <div class="fact-chip"><b>220Ω</b><span data-en>the "go-to" resistor for a single LED</span><span data-ta>ஒரு LED-க்கான பொதுவான மதிப்பு</span></div>
+      <div class="fact-chip"><b>Red-Red-Brown</b><span data-en>the band pattern for 220Ω</span><span data-ta>220Ω-க்கான வண்ண பட்டைகள்</span></div>
+      <div class="fact-chip"><b>No polarity</b><span data-en>a resistor works either direction</span><span data-ta>எந்த திசையிலும் வேலை செய்யும்</span></div>
+      <div class="fact-chip"><b>V = I × R</b><span data-en>Ohm's Law picks the right value</span><span data-ta>ஓம் விதி சரியான மதிப்பை தேர்வு செய்யும்</span></div>
+    </div>
+
+    <p class="mt-4" data-en>Unlike an LED, a resistor has <b>no polarity</b> — it works the same no matter which way you place it in the circuit. That makes it one of the most forgiving components on your breadboard.</p>
+    <p class="mt-4" data-ta>LED போலல்லாமல், எதிர்ப்பானுக்கு <b>துருவமுனைவு இல்லை</b> — சுற்றில் எந்த வழியில் வைத்தாலும் ஒரே மாதிரி வேலை செய்யும்.</p>
+  </div>
+</section>
+
+<!-- Interactive diagram -->
+<section class="section-tight">
+  <div class="container" style="max-width:760px">
+    <h2 class="mb-3"><span data-en>Tap a color band to read it</span><span data-ta>ஒரு வண்ண பட்டையை தொட்டு படிக்கவும்</span></h2>
+    <div class="diagram-wrap reveal">
+      <svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="80" x2="480" y2="80" stroke="#1d2e63" stroke-width="4"/>
+        <rect x="150" y="45" width="200" height="70" rx="18" fill="#e8d9b0"/>
+        <g class="diagram-hotspot" data-hotspot="band1"><rect x="175" y="45" width="16" height="70" fill="#d62828"/></g>
+        <g class="diagram-hotspot" data-hotspot="band2"><rect x="210" y="45" width="16" height="70" fill="#d62828"/></g>
+        <g class="diagram-hotspot" data-hotspot="band3"><rect x="245" y="45" width="16" height="70" fill="#7a4a1e"/></g>
+        <g class="diagram-hotspot" data-hotspot="band4"><rect x="310" y="45" width="16" height="70" fill="#c9a227"/></g>
+        <text x="250" y="140" text-anchor="middle" font-size="16" fill="#C9D6EA">220Ω · ±5%</text>
+      </svg>
+      <div class="diagram-tooltip" id="tip-band1" style="left:33%;top:2%">
+        <h5 data-en>Band 1: Red = 2</h5><h5 data-ta>பட்டை 1: சிவப்பு = 2</h5>
+        <p data-en>First digit of the value.</p><p data-ta>மதிப்பின் முதல் இலக்கம்.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-band2" style="left:42%;top:2%">
+        <h5 data-en>Band 2: Red = 2</h5><h5 data-ta>பட்டை 2: சிவப்பு = 2</h5>
+        <p data-en>Second digit of the value.</p><p data-ta>மதிப்பின் இரண்டாவது இலக்கம்.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-band3" style="left:50%;bottom:2%">
+        <h5 data-en>Band 3: Brown = ×10</h5><h5 data-ta>பட்டை 3: பழுப்பு = ×10</h5>
+        <p data-en>Multiplier — add one zero. 22 → 220.</p><p data-ta>பெருக்கி — ஒரு பூஜ்ஜியம் சேர். 22 → 220.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-band4" style="right:20%;top:2%">
+        <h5 data-en>Band 4: Gold = ±5%</h5><h5 data-ta>பட்டை 4: தங்கம் = ±5%</h5>
+        <p data-en>Tolerance — how precise the value is.</p><p data-ta>துல்லியம் — மதிப்பு எவ்வளவு சரியானது.</p>
+      </div>
+    </div>
+    <p class="muted center mt-3"><span data-en>💡 This is a 220Ω resistor — the one you'll use the most</span><span data-ta>💡 இது 220Ω எதிர்ப்பான் — நீங்கள் அதிகம் பயன்படுத்துவது</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:700px">
+    <h2 class="mb-4 center"><span data-en>Quick Self-Check</span><span data-ta>விரைவு சுயதேர்வு</span></h2>
+    <div class="mini-quiz reveal">
+
+      <div class="quiz-q" data-name="q1" data-correct="a">
+        <p class="q-text" data-en>1. What is a resistor's main job?</p>
+        <p class="q-text" data-ta>1. எதிர்ப்பானின் முக்கிய வேலை என்ன?</p>
+        <label class="quiz-opt"><input type="radio" name="q1" value="a"><span data-en>Limit / slow down current flow</span><span data-ta>மின்னோட்டத்தை கட்டுப்படுத்துதல்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q1" value="b"><span data-en>Light up the circuit</span><span data-ta>சுற்றை ஒளிரச் செய்தல்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q1" value="c"><span data-en>Store electricity</span><span data-ta>மின்சாரத்தை சேமித்தல்</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct!</span><span data-ta>✅ சரி!</span></div>
+      </div>
+
+      <div class="quiz-q" data-name="q2" data-correct="b">
+        <p class="q-text" data-en>2. Does a resistor have polarity (a correct direction)?</p>
+        <p class="q-text" data-ta>2. எதிர்ப்பானுக்கு துருவமுனைவு உண்டா?</p>
+        <label class="quiz-opt"><input type="radio" name="q2" value="a"><span data-en>Yes, always</span><span data-ta>ஆம், எப்போதும்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q2" value="b"><span data-en>No, it works either way</span><span data-ta>இல்லை, எந்த வழியிலும் வேலை செய்யும்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q2" value="c"><span data-en>Only red ones</span><span data-ta>சிவப்பு நிறமுள்ளவை மட்டும்</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct! Unlike an LED, direction doesn't matter.</span><span data-ta>✅ சரி! LED போலல்லாமல், திசை முக்கியமில்லை.</span></div>
+      </div>
+
+      <div class="quiz-q" data-name="q3" data-correct="c">
+        <p class="q-text" data-en>3. Which value is the go-to resistor for a single LED?</p>
+        <p class="q-text" data-ta>3. ஒரு LED-க்கான பொதுவான எதிர்ப்பு மதிப்பு எது?</p>
+        <label class="quiz-opt"><input type="radio" name="q3" value="a"><span data-en>10Ω</span></label>
+        <label class="quiz-opt"><input type="radio" name="q3" value="b"><span data-en>1,000,000Ω</span></label>
+        <label class="quiz-opt"><input type="radio" name="q3" value="c"><span data-en>220Ω</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct! 220Ω is the workshop standard.</span><span data-ta>✅ சரி! 220Ω பட்டறை தரநிலை.</span></div>
+      </div>
+
+      <button class="btn btn-primary btn-block" data-quiz-check>
+        <span data-en>Check My Answers</span><span data-ta>எனது பதில்களை சரிபார்</span>
+      </button>
+      <p class="quiz-score center" style="display:none"></p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="concept-nav">
+    <a href="led.html" class="btn btn-ghost"><span data-en>← LED</span><span data-ta>← LED</span></a>
+    <a href="breadboard.html" class="btn btn-primary"><span data-en>Next: Breadboard →</span><span data-ta>அடுத்து: பிரெட்போர்டு →</span></a>
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

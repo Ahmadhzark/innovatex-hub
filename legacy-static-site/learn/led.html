@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The LED — Learn Academy</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A1128%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%2310B981%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-weight=%22bold%22>X</text></svg>">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../" data-page="learn">
+<div id="nav-root"></div>
+
+<div class="section-tight container">
+  <div class="crumb">
+    <a href="index.html" data-en>Learn Academy</a><a href="index.html" data-ta>கற்றல் அகாடமி</a> /
+    <span data-en>LED</span><span data-ta>LED</span>
+  </div>
+  <div class="eyebrow"><span data-en>FOUNDATION · 2 OF 4</span><span data-ta>அடிப்படை · 2/4</span></div>
+  <h1><span data-en>The LED — Your First Light</span><span data-ta>LED — உங்கள் முதல் விளக்கு</span></h1>
+  <p class="story-hook" data-en>A one-way door for electricity that glows when it's happy.</p>
+  <p class="story-hook" data-ta>மகிழ்ச்சியாக இருக்கும்போது ஒளிரும், மின்சாரத்திற்கான ஒரு வழி கதவு.</p>
+</div>
+
+<section class="section-tight">
+  <div class="container" style="max-width:760px">
+    <p data-en>An LED (Light Emitting Diode) is one of the simplest components you'll ever use — and one of the strictest. Unlike a light bulb, it only allows electricity to flow in <b class="text-emerald">one direction</b>. Connect it backwards, and it simply stays dark — no damage, no light. Connect it forward, and it glows.</p>
+    <p data-ta>LED (Light Emitting Diode) நீங்கள் பயன்படுத்தும் மிக எளிய பாகங்களில் ஒன்று — மற்றும் மிகவும் கண்டிப்பானது. ஒரு பல்புவை போலல்லாமல், அது <b class="text-emerald">ஒரே திசையில்</b> மட்டுமே மின்சாரத்தை அனுமதிக்கிறது. தலைகீழாக இணைத்தால், அது வெறுமனே இருட்டாக இருக்கும் — சேதம் இல்லை, ஒளியும் இல்லை. சரியாக இணைத்தால், அது ஒளிரும்.</p>
+
+    <p class="mt-4" data-en>Every LED has two legs, and they are not the same:</p>
+    <p class="mt-4" data-ta>ஒவ்வொரு LED-க்கும் இரண்டு கால்கள் உள்ளன, அவை ஒரே மாதிரி இல்லை:</p>
+    <ul class="steps mt-3">
+      <li class="step"><div class="step-num" style="counter-increment:none"><span style="font-size:1.2rem">+</span></div><div>
+        <h4 data-en>Anode (longer leg)</h4><h4 data-ta>ஆனோடு (நீண்ட கால்)</h4>
+        <p class="mt-2" data-en>Connects to the <b>positive</b> side of the circuit. This is where current enters.</p>
+        <p class="mt-2" data-ta><b>நேர்மறை</b> பக்கத்துடன் இணைகிறது. இங்கே மின்னோட்டம் நுழைகிறது.</p>
+      </div></li>
+      <li class="step"><div class="step-num" style="counter-increment:none"><span style="font-size:1.2rem">−</span></div><div>
+        <h4 data-en>Cathode (shorter leg, flat edge on the LED body)</h4><h4 data-ta>கேத்தோடு (குட்டையான கால், தட்டையான விளிம்பு)</h4>
+        <p class="mt-2" data-en>Connects to the <b>negative</b> side. This is where current exits.</p>
+        <p class="mt-2" data-ta><b>எதிர்மறை</b> பக்கத்துடன் இணைகிறது. இங்கே மின்னோட்டம் வெளியேறுகிறது.</p>
+      </div></li>
+    </ul>
+
+    <p class="mt-5" data-en>Here's the part every beginner learns the hard way: an LED has almost <b class="text-orange">no resistance of its own</b>. Connect it directly to a battery with nothing else in the loop, and current rushes through uncontrolled — like removing the narrow section of pipe entirely. The LED overheats and burns out in seconds. That's why an LED is <b>always</b> paired with a resistor — you'll build that exact combination in the next lesson.</p>
+    <p class="mt-5" data-ta>ஒவ்வொரு ஆரம்பநிலையாளரும் கடினமாக கற்கும் பகுதி இதுதான்: LED-க்கு அதன் சொந்த <b class="text-orange">எதிர்ப்பு கிட்டத்தட்ட இல்லை</b>. வேறு எதுவும் இல்லாமல் நேரடியாக பேட்டரியுடன் இணைத்தால், மின்னோட்டம் கட்டுப்பாடு இல்லாமல் விரைகிறது. LED வெப்பமடைந்து சில வினாடிகளில் எரிந்துவிடும். அதனால்தான் LED எப்போதும் ஒரு எதிர்ப்பானுடன் இணைக்கப்படுகிறது.</p>
+
+    <div class="fact-strip">
+      <div class="fact-chip"><b>~2.0V</b><span data-en>typical forward voltage (red LED)</span><span data-ta>வழக்கமான முன்னோக்கு மின்னழுத்தம்</span></div>
+      <div class="fact-chip"><b>~20mA</b><span data-en>safe current for most LEDs</span><span data-ta>பாதுகாப்பான மின்னோட்டம்</span></div>
+      <div class="fact-chip"><b>Anode +</b><span data-en>longer leg = positive</span><span data-ta>நீண்ட கால் = நேர்மறை</span></div>
+      <div class="fact-chip"><b>Cathode −</b><span data-en>flat edge = negative</span><span data-ta>தட்டையான விளிம்பு = எதிர்மறை</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive diagram -->
+<section class="section-tight">
+  <div class="container" style="max-width:760px">
+    <h2 class="mb-3"><span data-en>Tap the LED to identify its parts</span><span data-ta>பாகங்களை அறிய LED-ஐ தொடவும்</span></h2>
+    <div class="diagram-wrap reveal">
+      <svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg">
+        <!-- LED bulb dome -->
+        <path d="M170 160 L170 80 A80 80 0 0 1 330 80 L330 160 Z" fill="#101a3d" stroke="#10B981" stroke-width="2"/>
+        <circle cx="250" cy="110" r="30" fill="#10B981" opacity="0.35"/>
+        <text x="250" y="120" text-anchor="middle" font-size="30">💡</text>
+        <!-- flat edge marker -->
+        <g class="diagram-hotspot" data-hotspot="flat">
+          <rect x="320" y="150" width="14" height="14" fill="#FF8C42"/>
+        </g>
+        <!-- anode leg (long, left) -->
+        <g class="diagram-hotspot" data-hotspot="anode">
+          <rect x="185" y="160" width="8" height="90" fill="#10B981"/>
+          <circle cx="189" cy="255" r="14" fill="none" stroke="#10B981" stroke-width="2"/>
+          <text x="189" y="260" text-anchor="middle" font-size="16" fill="#10B981">+</text>
+        </g>
+        <!-- cathode leg (short, right) -->
+        <g class="diagram-hotspot" data-hotspot="cathode">
+          <rect x="307" y="160" width="8" height="60" fill="#FF8C42"/>
+          <circle cx="311" cy="225" r="14" fill="none" stroke="#FF8C42" stroke-width="2"/>
+          <text x="311" y="230" text-anchor="middle" font-size="16" fill="#FF8C42">−</text>
+        </g>
+      </svg>
+      <div class="diagram-tooltip" id="tip-anode" style="left:30%;bottom:2%">
+        <h5 data-en>Anode (+)</h5><h5 data-ta>ஆனோடு (+)</h5>
+        <p data-en>Longer leg. Connects to positive / current enters here.</p>
+        <p data-ta>நீண்ட கால். நேர்மறையுடன் இணைகிறது.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-cathode" style="right:16%;bottom:10%">
+        <h5 data-en>Cathode (−)</h5><h5 data-ta>கேத்தோடு (−)</h5>
+        <p data-en>Shorter leg. Connects to negative / current exits here.</p>
+        <p data-ta>குட்டையான கால். எதிர்மறையுடன் இணைகிறது.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-flat" style="right:8%;top:55%">
+        <h5 data-en>Flat Edge</h5><h5 data-ta>தட்டையான விளிம்பு</h5>
+        <p data-en>A visual clue on the plastic body — the flat side is always the cathode, even if a leg gets bent or trimmed.</p>
+        <p data-ta>பிளாஸ்டிக் உடலில் ஒரு காட்சி குறிப்பு — தட்டையான பக்கம் எப்போதும் கேத்தோடு.</p>
+      </div>
+    </div>
+    <p class="muted center mt-3"><span data-en>💡 Tap / click anode, cathode, or the flat edge</span><span data-ta>💡 ஆனோடு, கேத்தோடு அல்லது தட்டையான விளிம்பை தொடவும்</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:700px">
+    <h2 class="mb-4 center"><span data-en>Quick Self-Check</span><span data-ta>விரைவு சுயதேர்வு</span></h2>
+    <div class="mini-quiz reveal">
+
+      <div class="quiz-q" data-name="q1" data-correct="b">
+        <p class="q-text" data-en>1. Which leg of an LED is the anode?</p>
+        <p class="q-text" data-ta>1. LED-இன் ஆனோடு எந்த கால்?</p>
+        <label class="quiz-opt"><input type="radio" name="q1" value="a"><span data-en>The shorter leg</span><span data-ta>குட்டையான கால்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q1" value="b"><span data-en>The longer leg</span><span data-ta>நீண்ட கால்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q1" value="c"><span data-en>Either — it doesn't matter</span><span data-ta>எதுவாக இருந்தாலும் பரவாயில்லை</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct! Longer leg = anode = positive.</span><span data-ta>✅ சரி! நீண்ட கால் = ஆனோடு = நேர்மறை.</span></div>
+      </div>
+
+      <div class="quiz-q" data-name="q2" data-correct="c">
+        <p class="q-text" data-en>2. What happens if you connect an LED backwards?</p>
+        <p class="q-text" data-ta>2. LED-ஐ தலைகீழாக இணைத்தால் என்ன நடக்கும்?</p>
+        <label class="quiz-opt"><input type="radio" name="q2" value="a"><span data-en>It explodes</span><span data-ta>அது வெடிக்கும்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q2" value="b"><span data-en>It glows dimmer</span><span data-ta>மங்கலாக ஒளிரும்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q2" value="c"><span data-en>It simply doesn't light up</span><span data-ta>அது வெறுமனே ஒளிராது</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct! No damage — it just won't turn on.</span><span data-ta>✅ சரி! சேதம் இல்லை — அது இயங்காது.</span></div>
+      </div>
+
+      <div class="quiz-q" data-name="q3" data-correct="a">
+        <p class="q-text" data-en>3. Why must an LED always be paired with a resistor?</p>
+        <p class="q-text" data-ta>3. LED எப்போதும் எதிர்ப்பானுடன் ஏன் இணைக்கப்பட வேண்டும்?</p>
+        <label class="quiz-opt"><input type="radio" name="q3" value="a"><span data-en>An LED has almost no resistance and will burn out otherwise</span><span data-ta>LED-க்கு எதிர்ப்பு இல்லை, இல்லையெனில் எரிந்துவிடும்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q3" value="b"><span data-en>It makes the LED brighter</span><span data-ta>அது LED-ஐ பிரகாசமாக்கும்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q3" value="c"><span data-en>It's just tradition</span><span data-ta>அது வெறும் பழக்கம்</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct! The resistor limits current to a safe level.</span><span data-ta>✅ சரி! எதிர்ப்பான் மின்னோட்டத்தை பாதுகாப்பான அளவில் வைத்திருக்கும்.</span></div>
+      </div>
+
+      <button class="btn btn-primary btn-block" data-quiz-check>
+        <span data-en>Check My Answers</span><span data-ta>எனது பதில்களை சரிபார்</span>
+      </button>
+      <p class="quiz-score center" style="display:none"></p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="concept-nav">
+    <a href="electricity.html" class="btn btn-ghost"><span data-en>← Electricity</span><span data-ta>← மின்சாரம்</span></a>
+    <a href="resistor.html" class="btn btn-primary"><span data-en>Next: Resistor →</span><span data-ta>அடுத்து: எதிர்ப்பான் →</span></a>
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

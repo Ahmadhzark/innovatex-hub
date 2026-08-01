@@ -1,0 +1,86 @@
+{
+  "week": 1,
+  "status": "live",
+  "title": { "en": "Week 1 — Recap & ESP32 Upgrade", "ta": "வாரம் 1 — மறுபார்வை & ESP32 மேம்படுத்தல்" },
+  "dateRange": { "en": "August 2026", "ta": "ஆகஸ்ட் 2026" },
+  "goal": {
+    "en": "Recap the Foundation (LED, resistor, breadboard) and take the leap from a hand-wired circuit to a coded one — meet the ESP32 and make your first LED blink through software instead of a switch.",
+    "ta": "அடிப்படைகளை (LED, எதிர்ப்பான், பிரெட்போர்டு) மறுபார்வையிடுங்கள், மேலும் கையால் இணைக்கப்பட்ட சுற்றிலிருந்து குறியீடு மூலம் கட்டுப்படுத்தப்படும் சுற்றுக்கு செல்லுங்கள் — ESP32-ஐ சந்தித்து, சாஃப்ட்வேர் மூலம் உங்கள் முதல் LED-ஐ ஒளிரச் செய்யுங்கள்."
+  },
+  "building": {
+    "en": "A breadboard circuit with one LED + 220Ω resistor wired to an ESP32 Dev Board, blinking on a timer written in Arduino code — your first bridge between electronics and programming.",
+    "ta": "ESP32 டெவ் போர்டுடன் இணைக்கப்பட்ட ஒரு LED + 220Ω எதிர்ப்பான் கொண்ட பிரெட்போர்டு சுற்று, Arduino குறியீட்டில் எழுதப்பட்ட நேரத்தில் ஒளிரும் — எலக்ட்ரானிக்ஸிற்கும் நிரலாக்கத்திற்கும் இடையேயான உங்கள் முதல் பாலம்."
+  },
+  "resourcePerson": {
+    "name": "Add resource person name",
+    "role": { "en": "Session Instructor — edit in data/week1.json", "ta": "அமர்வு பயிற்றுநர் — data/week1.json இல் திருத்தவும்" }
+  },
+  "attendance": { "count": 0, "total": 100 },
+  "circuit": {
+    "image": "assets/img/weeks/week1/circuit.svg",
+    "caption": {
+      "en": "ESP32 GPIO2 → 220Ω resistor → LED anode → LED cathode → GND. Same LED + resistor rule from Learn Academy — now controlled by a microcontroller pin instead of a battery.",
+      "ta": "ESP32 GPIO2 → 220Ω எதிர்ப்பான் → LED ஆனோடு → LED கேத்தோடு → GND. கற்றல் அகாடமியில் கற்ற அதே LED + எதிர்ப்பான் விதி — இப்போது பேட்டரிக்கு பதிலாக மைக்ரோகண்ட்ரோலர் பின் மூலம் கட்டுப்படுத்தப்படுகிறது."
+    }
+  },
+  "components": [
+    { "en": "ESP32 Dev Board", "ta": "ESP32 டெவ் போர்டு" },
+    { "en": "Breadboard", "ta": "பிரெட்போர்டு" },
+    { "en": "1× LED (any color)", "ta": "1× LED (எந்த நிறமும்)" },
+    { "en": "1× 220Ω Resistor", "ta": "1× 220Ω எதிர்ப்பான்" },
+    { "en": "2× Jumper Wires", "ta": "2× ஜம்பர் வயர்கள்" },
+    { "en": "USB Cable (data-capable)", "ta": "USB கேபிள் (டேட்டா திறன் கொண்டது)" },
+    { "en": "Laptop with Arduino IDE", "ta": "Arduino IDE உள்ள லேப்டாப்" }
+  ],
+  "steps": [
+    {
+      "title": { "en": "1. Mount the ESP32 on the breadboard", "ta": "1. ESP32-ஐ பிரெட்போர்டில் பொருத்துங்கள்" },
+      "desc": { "en": "Straddle the center gap so pins on both sides are exposed on separate terminal strips.", "ta": "இரு பக்கங்களிலும் உள்ள பின்கள் தனித்தனி டெர்மினல் பட்டைகளில் தெரியும்படி நடு இடைவெளியில் வையுங்கள்." },
+      "image": ""
+    },
+    {
+      "title": { "en": "2. Place the LED", "ta": "2. LED-ஐ வையுங்கள்" },
+      "desc": { "en": "Insert the LED into the breadboard, longer leg (anode) and shorter leg (cathode) on two different rows.", "ta": "LED-ஐ பிரெட்போர்டில் செருகவும், நீண்ட கால் (ஆனோடு) மற்றும் குட்டையான கால் (கேத்தோடு) வெவ்வேறு வரிசைகளில் இருக்க வேண்டும்." },
+      "image": ""
+    },
+    {
+      "title": { "en": "3. Add the 220Ω resistor", "ta": "3. 220Ω எதிர்ப்பானை சேர்க்கவும்" },
+      "desc": { "en": "Connect it between the LED's cathode row and the ground (−) rail.", "ta": "LED-இன் கேத்தோடு வரிசைக்கும் கிரவுண்ட் (−) ரெயிலுக்கும் இடையே இணைக்கவும்." },
+      "image": ""
+    },
+    {
+      "title": { "en": "4. Wire GPIO2 to the LED", "ta": "4. GPIO2-ஐ LED-உடன் இணைக்கவும்" },
+      "desc": { "en": "Run a jumper wire from the ESP32's GPIO2 pin to the LED's anode row.", "ta": "ESP32-இன் GPIO2 பின்னிலிருந்து LED-இன் ஆனோடு வரிசைக்கு ஜம்பர் வயரை இணைக்கவும்." },
+      "image": ""
+    },
+    {
+      "title": { "en": "5. Complete the ground path", "ta": "5. கிரவுண்ட் பாதையை முடிக்கவும்" },
+      "desc": { "en": "Connect the ESP32's GND pin to the breadboard's ground (−) rail.", "ta": "ESP32-இன் GND பின்னை பிரெட்போர்டின் கிரவுண்ட் (−) ரெயிலுடன் இணைக்கவும்." },
+      "image": ""
+    },
+    {
+      "title": { "en": "6. Flash the code", "ta": "6. குறியீட்டை பதிவேற்றவும்" },
+      "desc": { "en": "Plug in the USB cable, open Arduino IDE, select \"ESP32 Dev Module\" as the board, and upload the sketch below.", "ta": "USB கேபிளை செருகவும், Arduino IDE-ஐ திறக்கவும், போர்டாக \"ESP32 Dev Module\"-ஐ தேர்ந்தெடுத்து, கீழே உள்ள ஸ்கெட்சை பதிவேற்றவும்." },
+      "image": ""
+    }
+  ],
+  "code": {
+    "lang": "cpp",
+    "filename": "week1_blink.ino",
+    "content": "// InnovateX 3.0 — Week 1: ESP32 Blink\n// Recap: LED + Resistor + Breadboard — now controlled by code!\n\nconst int LED_PIN = 2;  // GPIO2, wired through a 220ohm resistor to the LED\n\nvoid setup() {\n  pinMode(LED_PIN, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(LED_PIN, HIGH);  // LED ON\n  delay(500);\n  digitalWrite(LED_PIN, LOW);   // LED OFF\n  delay(500);\n}\n"
+  },
+  "learned": [
+    { "en": "How the ESP32 differs from a simple battery-powered circuit", "ta": "ESP32 எளிய பேட்டரி சுற்றிலிருந்து எவ்வாறு வேறுபடுகிறது" },
+    { "en": "What GPIO pins are and how to pick one", "ta": "GPIO பின்கள் என்றால் என்ன, ஒன்றை எப்படி தேர்வு செய்வது" },
+    { "en": "Installing and using the Arduino IDE", "ta": "Arduino IDE-ஐ நிறுவி பயன்படுத்துதல்" },
+    { "en": "Writing and uploading their first sketch", "ta": "தங்கள் முதல் ஸ்கெட்சை எழுதி பதிவேற்றுதல்" }
+  ],
+  "photos": [],
+  "driveLink": "",
+  "links": [
+    { "label": { "en": "Install ESP32 boards in Arduino IDE", "ta": "Arduino IDE-இல் ESP32 போர்டுகளை நிறுவவும்" }, "url": "https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html" },
+    { "label": { "en": "Arduino IDE Download", "ta": "Arduino IDE பதிவிறக்கம்" }, "url": "https://www.arduino.cc/en/software" }
+  ],
+  "tinkercad": "",
+  "quizFormUrl": ""
+}

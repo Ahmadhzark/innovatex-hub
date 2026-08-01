@@ -1,0 +1,9 @@
+{
+  "week": 4,
+  "status": "coming-soon",
+  "title": { "en": "Week 4 — AI & TinyML", "ta": "வாரம் 4 — AI & TinyML" },
+  "teaser": {
+    "en": "Teach a tiny model to recognize patterns and run it directly on the ESP32 — no cloud required.",
+    "ta": "வடிவங்களை அடையாளம் காண ஒரு சிறிய மாதிரிக்கு கற்பித்து, அதை ESP32-இல் நேரடியாக இயக்குங்கள் — கிளவுட் தேவையில்லை."
+  }
+}

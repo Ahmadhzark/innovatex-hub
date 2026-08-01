@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, sans-serif">
+  <rect width="800" height="400" fill="#101a3d"/>
+  <!-- ESP32 board -->
+  <rect x="60" y="60" width="220" height="280" rx="10" fill="#0A1128" stroke="#10B981" stroke-width="2"/>
+  <text x="170" y="45" text-anchor="middle" fill="#C9D6EA" font-size="16" font-weight="700">ESP32 Dev Board</text>
+  <!-- pin labels left -->
+  <text x="55" y="120" text-anchor="end" fill="#8695b7" font-size="12">3V3</text>
+  <text x="55" y="150" text-anchor="end" fill="#FF8C42" font-size="12">GPIO2</text>
+  <text x="55" y="180" text-anchor="end" fill="#8695b7" font-size="12">GPIO4</text>
+  <text x="55" y="320" text-anchor="end" fill="#5b9bd5" font-size="12">GND</text>
+  <circle cx="60" cy="116" r="4" fill="#C9D6EA"/>
+  <circle cx="60" cy="146" r="4" fill="#FF8C42"/>
+  <circle cx="60" cy="176" r="4" fill="#C9D6EA"/>
+  <circle cx="60" cy="316" r="4" fill="#5b9bd5"/>
+
+  <!-- breadboard -->
+  <rect x="380" y="80" width="360" height="240" rx="10" fill="#0d1530" stroke="#1d2e63" stroke-width="2"/>
+  <line x1="400" y1="110" x2="720" y2="110" stroke="#d62828" stroke-width="2"/>
+  <line x1="400" y1="290" x2="720" y2="290" stroke="#5b9bd5" stroke-width="2"/>
+  <text x="400" y="102" fill="#d62828" font-size="11">+ rail</text>
+  <text x="400" y="308" fill="#5b9bd5" font-size="11">− rail (GND)</text>
+
+  <!-- LED -->
+  <g>
+    <path d="M540 160 L540 200 A30 30 0 0 0 600 200 L600 160 Z" fill="#0A1128" stroke="#10B981" stroke-width="2"/>
+    <circle cx="570" cy="185" r="14" fill="#10B981" opacity="0.4"/>
+    <text x="570" y="192" text-anchor="middle" font-size="16">💡</text>
+    <line x1="548" y1="200" x2="548" y2="230" stroke="#10B981" stroke-width="3"/>
+    <line x1="592" y1="200" x2="592" y2="230" stroke="#FF8C42" stroke-width="3"/>
+    <text x="548" y="245" text-anchor="middle" font-size="10" fill="#10B981">anode</text>
+    <text x="592" y="245" text-anchor="middle" font-size="10" fill="#FF8C42">cathode</text>
+  </g>
+
+  <!-- resistor -->
+  <g>
+    <rect x="575" y="255" width="60" height="18" rx="6" fill="#e8d9b0"/>
+    <rect x="585" y="255" width="6" height="18" fill="#d62828"/>
+    <rect x="596" y="255" width="6" height="18" fill="#d62828"/>
+    <rect x="607" y="255" width="6" height="18" fill="#7a4a1e"/>
+    <text x="605" y="285" text-anchor="middle" font-size="11" fill="#C9D6EA">220Ω</text>
+  </g>
+
+  <!-- wires -->
+  <path d="M60 146 C 320 146, 320 185, 540 185" fill="none" stroke="#FF8C42" stroke-width="2" stroke-dasharray="6 4"/>
+  <path d="M592 230 L605 255" fill="none" stroke="#10B981" stroke-width="2"/>
+  <path d="M605 273 L605 290" fill="none" stroke="#10B981" stroke-width="2"/>
+  <path d="M60 316 C 200 316, 300 290, 400 290" fill="none" stroke="#5b9bd5" stroke-width="2" stroke-dasharray="6 4"/>
+
+  <text x="400" y="365" text-anchor="middle" fill="#8695b7" font-size="13">GPIO2 → LED anode · LED cathode → 220Ω → GND rail → ESP32 GND</text>
+</svg>

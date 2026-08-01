@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   InnovateX 3.0 — Design System
+   "Apple-level polish combined with an embedded systems laboratory."
+   ========================================================================== */
+
+@theme {
+  /* --- Surfaces --- */
+  --color-void: #050816;
+  --color-abyss: #0b1220;
+  --color-surface: #0f172a;
+  --color-elevated: #131c31;
+
+  /* --- Brand --- */
+  --color-primary: #4ade80;
+  --color-secondary: #38bdf8;
+  --color-accent: #a855f7;
+
+  /* --- Text --- */
+  --color-ink: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-faint: #64748b;
+
+  /* --- Hairlines --- */
+  --color-hairline: rgba(148, 163, 184, 0.12);
+  --color-hairline-strong: rgba(148, 163, 184, 0.24);
+
+  /* --- Typography --- */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* --- Motion --- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Animations --- */
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3.5s ease-in-out infinite;
+  --animate-trace: trace 3s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes aurora {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0.55; }
+  50%  { transform: translate3d(4%, -3%, 0) scale(1.12); opacity: 0.8; }
+  100% { transform: translate3d(-3%, 4%, 0) scale(1.05); opacity: 0.6; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+@keyframes trace {
+  from { stroke-dashoffset: 200; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+* {
+  border-color: var(--color-hairline);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Anchor targets clear the sticky navbar */
+  scroll-padding-top: 6rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+::selection {
+  background-color: color-mix(in oklab, var(--color-primary) 30%, transparent);
+  color: var(--color-ink);
+}
+
+/* Custom scrollbar — subtle, matches the dark surface */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-void); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-hairline-strong);
+  border-radius: 999px;
+  border: 2px solid var(--color-void);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-faint); }
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Component utilities
+   ========================================================================== */
+
+@utility glass {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 250, 252, 0.055),
+    rgba(248, 250, 252, 0.015)
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-hairline);
+}
+
+@utility glass-strong {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 250, 252, 0.08),
+    rgba(248, 250, 252, 0.025)
+  );
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid var(--color-hairline-strong);
+}
+
+/* Gradient text — used sparingly on hero words */
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-ink) 0%,
+    var(--color-ink) 40%,
+    var(--color-primary) 70%,
+    var(--color-secondary) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Thin luminous divider */
+@utility hairline-glow {
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-hairline-strong) 20%,
+    color-mix(in oklab, var(--color-primary) 45%, transparent) 50%,
+    var(--color-hairline-strong) 80%,
+    transparent
+  );
+}
+
+/* Section rhythm — consistent vertical breathing room */
+@utility section-y {
+  padding-block: clamp(4rem, 10vw, 9rem);
+}
+
+/* Numeric / spec text.
+   0.75rem (12px) is the practical floor for comfortable phone reading —
+   most visitors here are on a phone, so this isn't shaved thinner. */
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}

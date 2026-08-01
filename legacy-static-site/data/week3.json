@@ -1,0 +1,9 @@
+{
+  "week": 3,
+  "status": "coming-soon",
+  "title": { "en": "Week 3 — Smart Robotics", "ta": "வாரம் 3 — ஸ்மார்ட் ரோபோட்டிக்ஸ்" },
+  "teaser": {
+    "en": "Motors, wheels, and motion — build a robot chassis that the ESP32 can actually drive.",
+    "ta": "மோட்டார்கள், சக்கரங்கள், இயக்கம் — ESP32 இயக்கக்கூடிய ரோபோ சேசியை உருவாக்குங்கள்."
+  }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Week JSON Generator (InnovateX Hub)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A1128%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%2310B981%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-weight=%22bold%22>X</text></svg>">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../" data-page="admin">
+<div id="nav-root"></div>
+
+<div class="section-tight container">
+  <div class="eyebrow"><span data-en>ADMIN · HIDDEN PAGE</span><span data-ta>நிர்வாகம் · மறைமுக பக்கம்</span></div>
+  <h1><span data-en>Week JSON Generator</span><span data-ta>வார JSON உருவாக்கி</span></h1>
+  <p class="lede mt-2">
+    <span data-en>Fill this form, click Generate, then copy the JSON and paste it into <code>data/weekN.json</code> on GitHub. This page is not linked from the site menu — bookmark this URL.</span>
+    <span data-ta>இந்த படிவத்தை நிரப்பி, உருவாக்கு-ஐ கிளிக் செய்து, JSON-ஐ நகலெடுத்து GitHub-இல் <code>data/weekN.json</code> இல் ஒட்டவும்.</span>
+  </p>
+</div>
+
+<section class="section-tight">
+  <div class="container" style="max-width:820px">
+    <form id="genForm">
+
+      <fieldset>
+        <legend><span data-en>Basics</span><span data-ta>அடிப்படைகள்</span></legend>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="field">
+            <label>Week number (1–7)</label>
+            <input type="number" id="week" min="1" max="7" value="1" required>
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select id="status">
+              <option value="live">live (fully filled)</option>
+              <option value="coming-soon">coming-soon</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label>Title (English)</label><input id="titleEn" placeholder="Week 2 — IoT Dashboard & Cloud"></div>
+          <div class="field"><label>Title (Tamil)</label><input id="titleTa" placeholder="வாரம் 2 — IoT டாஷ்போர்டு"></div>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label>Date range (English)</label><input id="dateEn" placeholder="September 2026"></div>
+          <div class="field"><label>Date range (Tamil)</label><input id="dateTa" placeholder="செப்டம்பர் 2026"></div>
+        </div>
+        <div class="field">
+          <label>Teaser — only used when Status = coming-soon (English)</label>
+          <textarea id="teaserEn" placeholder="One sentence about what unlocks this week."></textarea>
+        </div>
+        <div class="field">
+          <label>Teaser (Tamil)</label>
+          <textarea id="teaserTa"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset id="liveFields">
+        <legend><span data-en>Full Details (only needed if Status = live)</span><span data-ta>முழு விவரங்கள் (Status = live எனில் மட்டும்)</span></legend>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label>Goal (English)</label><textarea id="goalEn"></textarea></div>
+          <div class="field"><label>Goal (Tamil)</label><textarea id="goalTa"></textarea></div>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label>What we're building (English)</label><textarea id="buildEn"></textarea></div>
+          <div class="field"><label>What we're building (Tamil)</label><textarea id="buildTa"></textarea></div>
+        </div>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="field"><label>Resource person name</label><input id="rpName"></div>
+          <div class="field"><label>Their role (English)</label><input id="rpRoleEn" placeholder="ESP32 Trainer"></div>
+          <div class="field"><label>Their role (Tamil)</label><input id="rpRoleTa"></div>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label>Attendance count</label><input type="number" id="attCount" value="0"></div>
+          <div class="field"><label>Attendance total</label><input type="number" id="attTotal" value="100"></div>
+        </div>
+
+        <div class="field">
+          <label>Circuit image path <span class="hint">(e.g. assets/img/weeks/week2/circuit.svg — leave blank if none yet)</span></label>
+          <input id="circuitImg">
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label>Circuit caption (English)</label><textarea id="circuitCapEn"></textarea></div>
+          <div class="field"><label>Circuit caption (Tamil)</label><textarea id="circuitCapTa"></textarea></div>
+        </div>
+
+        <div class="field">
+          <label>Components <span class="hint">(one per line, format: English :: Tamil)</span></label>
+          <textarea id="components" placeholder="ESP32 Dev Board :: ESP32 டெவ் போர்டு"></textarea>
+        </div>
+
+        <div class="field">
+          <label>Wiring steps <span class="hint">(one per line: Title EN :: Title TA :: Desc EN :: Desc TA :: image path)</span></label>
+          <textarea id="steps" placeholder="1. Mount the board :: 1. போர்டை பொருத்தவும் :: Place it on the breadboard :: பிரெட்போர்டில் வையுங்கள் :: "></textarea>
+        </div>
+
+        <div class="grid" style="grid-template-columns:1fr 2fr">
+          <div class="field"><label>Code filename</label><input id="codeFile" placeholder="week2.ino"></div>
+          <div class="field"><label>Code language</label><input id="codeLang" value="cpp"></div>
+        </div>
+        <div class="field">
+          <label>Code content</label>
+          <textarea id="codeContent" style="min-height:160px" placeholder="Paste the full sketch here"></textarea>
+        </div>
+
+        <div class="field">
+          <label>What students learned <span class="hint">(one per line: English :: Tamil)</span></label>
+          <textarea id="learned"></textarea>
+        </div>
+
+        <div class="field">
+          <label>Photo paths <span class="hint">(one per line, e.g. assets/img/weeks/week2/1.jpg)</span></label>
+          <textarea id="photos"></textarea>
+        </div>
+        <div class="field"><label>Google Drive full-album link</label><input id="driveLink" placeholder="https://drive.google.com/..."></div>
+
+        <div class="field">
+          <label>Useful links <span class="hint">(one per line: Label EN :: Label TA :: URL)</span></label>
+          <textarea id="links"></textarea>
+        </div>
+        <div class="field"><label>Tinkercad link (optional)</label><input id="tinkercad"></div>
+        <div class="field"><label>Quiz Google Form embed URL <span class="hint">(from Send → Embed &lt;iframe&gt; → copy the src)</span></label><input id="quizUrl"></div>
+      </fieldset>
+
+      <button type="button" class="btn btn-primary btn-block" id="genBtn"><span data-en>Generate JSON</span><span data-ta>JSON உருவாக்கு</span></button>
+    </form>
+
+    <div class="code-block mt-5">
+      <div class="code-block-head">
+        <span id="outFilename">data/week1.json</span>
+        <button class="copy-btn" id="copyOut">Copy</button>
+      </div>
+      <pre><code id="output">// Fill the form above and click "Generate JSON"</code></pre>
+    </div>
+    <p class="muted mt-3">
+      <span data-en>Next: on GitHub, open data/weekN.json → edit → paste → commit. The site updates automatically.</span>
+      <span data-ta>அடுத்து: GitHub-இல் data/weekN.json ஐ திறந்து → திருத்து → ஒட்டு → commit செய்யவும். தளம் தானாக புதுப்பிக்கும்.</span>
+    </p>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script src="../assets/js/main.js"></script>
+<script>
+(function () {
+  "use strict";
+  function val(id) { return document.getElementById(id).value.trim(); }
+  function bi(en, ta) { return { en: en, ta: ta }; }
+  function pairs(text) {
+    return text.split("\n").map(function (l) { return l.trim(); }).filter(Boolean).map(function (line) {
+      var parts = line.split("::").map(function (p) { return p.trim(); });
+      return bi(parts[0] || "", parts[1] || "");
+    });
+  }
+  function lines(text) {
+    return text.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+  }
+
+  document.getElementById("genBtn").addEventListener("click", function () {
+    var week = parseInt(val("week"), 10) || 1;
+    var status = val("status");
+    var data = {
+      week: week,
+      status: status,
+      title: bi(val("titleEn"), val("titleTa")),
+      dateRange: bi(val("dateEn"), val("dateTa"))
+    };
+
+    if (status === "coming-soon") {
+      data.teaser = bi(val("teaserEn"), val("teaserTa"));
+    } else {
+      data.goal = bi(val("goalEn"), val("goalTa"));
+      data.building = bi(val("buildEn"), val("buildTa"));
+      data.resourcePerson = { name: val("rpName"), role: bi(val("rpRoleEn"), val("rpRoleTa")) };
+      data.attendance = { count: parseInt(val("attCount"), 10) || 0, total: parseInt(val("attTotal"), 10) || 100 };
+      data.circuit = { image: val("circuitImg"), caption: bi(val("circuitCapEn"), val("circuitCapTa")) };
+      data.components = pairs(val("components"));
+
+      data.steps = lines(val("steps")).map(function (line) {
+        var p = line.split("::").map(function (s) { return s.trim(); });
+        return {
+          title: bi(p[0] || "", p[1] || ""),
+          desc: bi(p[2] || "", p[3] || ""),
+          image: p[4] || ""
+        };
+      });
+
+      data.code = { lang: val("codeLang") || "cpp", filename: val("codeFile") || "sketch.ino", content: document.getElementById("codeContent").value };
+      data.learned = pairs(val("learned"));
+      data.photos = lines(val("photos"));
+      data.driveLink = val("driveLink");
+
+      data.links = lines(val("links")).map(function (line) {
+        var p = line.split("::").map(function (s) { return s.trim(); });
+        return { label: bi(p[0] || "", p[1] || ""), url: p[2] || "" };
+      });
+
+      data.tinkercad = val("tinkercad");
+      data.quizFormUrl = val("quizUrl");
+    }
+
+    document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    document.getElementById("outFilename").textContent = "data/week" + week + ".json";
+  });
+
+  document.getElementById("copyOut").addEventListener("click", function () {
+    var text = document.getElementById("output").textContent;
+    navigator.clipboard.writeText(text).then(function () {
+      var btn = document.getElementById("copyOut");
+      btn.textContent = "Copied ✓";
+      setTimeout(function () { btn.textContent = "Copy"; }, 1800);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Breadboard — Learn Academy</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A1128%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%2310B981%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-weight=%22bold%22>X</text></svg>">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../" data-page="learn">
+<div id="nav-root"></div>
+
+<div class="section-tight container">
+  <div class="crumb">
+    <a href="index.html" data-en>Learn Academy</a><a href="index.html" data-ta>கற்றல் அகாடமி</a> /
+    <span data-en>Breadboard</span><span data-ta>பிரெட்போர்டு</span>
+  </div>
+  <div class="eyebrow"><span data-en>FOUNDATION · 4 OF 4</span><span data-ta>அடிப்படை · 4/4</span></div>
+  <h1><span data-en>The Breadboard — Build Without Soldering</span><span data-ta>பிரெட்போர்டு — சோல்டரிங் இல்லாமல் கட்டமையுங்கள்</span></h1>
+  <p class="story-hook" data-en>A grid of hidden wires that lets you undo any mistake in one second.</p>
+  <p class="story-hook" data-ta>ஒரு வினாடியில் எந்த தவறையும் மாற்ற அனுமதிக்கும் மறைமுக வயர்களின் கட்டம்.</p>
+</div>
+
+<section class="section-tight">
+  <div class="container" style="max-width:760px">
+    <p data-en>A breadboard looks like a plastic board full of tiny holes — but hidden underneath, metal strips connect certain holes together automatically. Push a wire or component leg into a hole, and it's electrically joined to every other hole on that same strip, with zero soldering.</p>
+    <p data-ta>பிரெட்போர்டு சிறிய துளைகள் நிறைந்த ஒரு பிளாஸ்டிக் பலகை போல் தெரிகிறது — ஆனால் அதற்குள் மறைந்திருக்கும் உலோக பட்டைகள் சில துளைகளை தானாக இணைக்கின்றன. ஒரு வயர் அல்லது பாக காலை ஒரு துளையில் செருகினால், அது அதே பட்டையில் உள்ள மற்ற எல்லா துளைகளுடனும் இணைக்கப்படுகிறது.</p>
+
+    <p class="mt-4" data-en>There are two kinds of strips you must recognize:</p>
+    <p class="mt-4" data-ta>நீங்கள் அடையாளம் காண வேண்டிய இரண்டு வகை பட்டைகள் உள்ளன:</p>
+
+    <ul class="steps mt-3">
+      <li class="step"><div class="step-num" style="counter-increment:none">⚡</div><div>
+        <h4 data-en>Power Rails (top &amp; bottom, marked + and −)</h4><h4 data-ta>பவர் ரெயில்கள் (மேலும் கீழும், + மற்றும் − குறியிடப்பட்டவை)</h4>
+        <p class="mt-2" data-en>Run the <b>full length</b> of the board. Everything plugged into the red (+) line shares power; everything on the blue (−) line shares ground.</p>
+        <p class="mt-2" data-ta>பலகையின் <b>முழு நீளத்திலும்</b> ஓடுகிறது. சிவப்பு (+) கோட்டில் இணைக்கப்பட்ட அனைத்தும் பவரை பகிர்ந்து கொள்கின்றன.</p>
+      </li></div>
+      <li class="step"><div class="step-num" style="counter-increment:none">🔀</div><div>
+        <h4 data-en>Terminal Strips (the middle rows, in groups of 5)</h4><h4 data-ta>டெர்மினல் பட்டைகள் (நடு வரிசைகள், 5 குழுக்களாக)</h4>
+        <p class="mt-2" data-en>Run <b>vertically in short groups</b> — only 5 holes are connected, and the center gap splits the board in two. This is where components and their legs actually sit.</p>
+        <p class="mt-2" data-ta><b>குறுகிய குழுக்களாக செங்குத்தாக</b> ஓடுகிறது — 5 துளைகள் மட்டுமே இணைக்கப்பட்டுள்ளன. இங்குதான் பாகங்கள் அமர்கின்றன.</p>
+      </li></div>
+    </ul>
+
+    <p class="mt-5" data-en>This design is exactly why breadboards are perfect for learning: plug something in the wrong place, just pull it out and try again — no heat, no wasted parts, no permanent mistakes.</p>
+    <p class="mt-5" data-ta>இந்த வடிவமைப்பு தான் பிரெட்போர்டுகள் கற்றலுக்கு ஏற்றதாக இருக்கக் காரணம்: தவறான இடத்தில் செருகினால், அதை வெளியே இழுத்து மீண்டும் முயற்சி செய்யலாம் — வெப்பம் இல்லை, வீணான பாகங்கள் இல்லை.</p>
+  </div>
+</section>
+
+<!-- Interactive diagram -->
+<section class="section-tight">
+  <div class="container" style="max-width:900px">
+    <h2 class="mb-3"><span data-en>Tap a region to understand the connections</span><span data-ta>இணைப்புகளை புரிந்துகொள்ள ஒரு பகுதியை தொடவும்</span></h2>
+    <div class="diagram-wrap reveal">
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="780" height="280" rx="14" fill="#101a3d" stroke="#1d2e63" stroke-width="2"/>
+        <!-- top power rail -->
+        <g class="diagram-hotspot" data-hotspot="rail-top">
+          <line x1="30" y1="35" x2="770" y2="35" stroke="#d62828" stroke-width="2"/>
+          <line x1="30" y1="50" x2="770" y2="50" stroke="#1d2e63" stroke-width="2"/>
+          <text x="30" y="30" font-size="12" fill="#d62828">+ rail</text>
+        </g>
+        <!-- top terminal strips -->
+        <g class="diagram-hotspot" data-hotspot="terminal">
+          <text x="30" y="95" font-size="12" fill="#10B981">terminal strips (groups of 5)</text>
+          <g fill="#8695b7">
+            <!-- generate a grid of dots symbolically -->
+          </g>
+          <rect x="30" y="80" width="340" height="90" fill="none" stroke="var(--line)" stroke-width="1"/>
+          <rect x="430" y="80" width="340" height="90" fill="none" stroke="var(--line)" stroke-width="1"/>
+        </g>
+        <!-- center gap -->
+        <g class="diagram-hotspot" data-hotspot="gap">
+          <rect x="378" y="75" width="44" height="100" fill="rgba(255,140,66,0.12)" stroke="#FF8C42" stroke-dasharray="4 3"/>
+          <text x="400" y="200" text-anchor="middle" font-size="11" fill="#FF8C42">gap</text>
+        </g>
+        <!-- bottom power rail -->
+        <g class="diagram-hotspot" data-hotspot="rail-bottom">
+          <line x1="30" y1="250" x2="770" y2="250" stroke="#1d2e63" stroke-width="2"/>
+          <line x1="30" y1="265" x2="770" y2="265" stroke="#2b6cb0" stroke-width="2"/>
+          <text x="30" y="280" font-size="12" fill="#5b9bd5">− rail</text>
+        </g>
+      </svg>
+      <div class="diagram-tooltip" id="tip-rail-top" style="left:4%;top:2%">
+        <h5 data-en>Power Rail (+)</h5><h5 data-ta>பவர் ரெயில் (+)</h5>
+        <p data-en>Runs the full length of the board — connect your battery/5V here.</p>
+        <p data-ta>பலகையின் முழு நீளத்திலும் ஓடுகிறது — உங்கள் பேட்டரியை இங்கே இணைக்கவும்.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-terminal" style="left:6%;top:32%">
+        <h5 data-en>Terminal Strips</h5><h5 data-ta>டெர்மினல் பட்டைகள்</h5>
+        <p data-en>Each column of 5 holes is internally joined — this is where component legs go.</p>
+        <p data-ta>5 துளைகளின் ஒவ்வொரு நெடுவரிசையும் உள்ளுக்குள் இணைக்கப்பட்டுள்ளது.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-gap" style="left:44%;top:32%">
+        <h5 data-en>Center Gap</h5><h5 data-ta>நடு இடைவெளி</h5>
+        <p data-en>Splits the board — perfect for placing chips that span both halves.</p>
+        <p data-ta>பலகையை பிரிக்கிறது — இரு பாதிகளிலும் அமையும் சிப்களுக்கு ஏற்றது.</p>
+      </div>
+      <div class="diagram-tooltip" id="tip-rail-bottom" style="left:4%;bottom:2%">
+        <h5 data-en>Power Rail (−)</h5><h5 data-ta>பவர் ரெயில் (−)</h5>
+        <p data-en>Runs the full length of the board — connect ground (GND) here.</p>
+        <p data-ta>பலகையின் முழு நீளத்திலும் ஓடுகிறது — கிரவுண்டை இங்கே இணைக்கவும்.</p>
+      </div>
+    </div>
+    <p class="muted center mt-3"><span data-en>💡 Tap a rail, strip, or the center gap</span><span data-ta>💡 ரெயில், பட்டை அல்லது நடு இடைவெளியை தொடவும்</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:700px">
+    <h2 class="mb-4 center"><span data-en>Quick Self-Check</span><span data-ta>விரைவு சுயதேர்வு</span></h2>
+    <div class="mini-quiz reveal">
+
+      <div class="quiz-q" data-name="q1" data-correct="b">
+        <p class="q-text" data-en>1. How many holes are connected in one terminal strip group?</p>
+        <p class="q-text" data-ta>1. ஒரு டெர்மினல் பட்டை குழுவில் எத்தனை துளைகள் இணைக்கப்பட்டுள்ளன?</p>
+        <label class="quiz-opt"><input type="radio" name="q1" value="a"><span data-en>The whole row</span><span data-ta>முழு வரிசையும்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q1" value="b"><span data-en>5 holes</span><span data-ta>5 துளைகள்</span></label>
+        <label class="quiz-opt"><input type="radio" name="q1" value="c"><span data-en>1 hole</span><span data-ta>1 துளை</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct! Groups of 5.</span><span data-ta>✅ சரி! 5 துளைகளின் குழுக்கள்.</span></div>
+      </div>
+
+      <div class="quiz-q" data-name="q2" data-correct="a">
+        <p class="q-text" data-en>2. What do the power rails do?</p>
+        <p class="q-text" data-ta>2. பவர் ரெயில்கள் என்ன செய்கின்றன?</p>
+        <label class="quiz-opt"><input type="radio" name="q2" value="a"><span data-en>Carry power/ground along the full board</span><span data-ta>முழு பலகையிலும் பவர்/கிரவுண்ட் கொண்டு செல்கின்றன</span></label>
+        <label class="quiz-opt"><input type="radio" name="q2" value="b"><span data-en>Hold components in place</span><span data-ta>பாகங்களை நிலைநிறுத்துகின்றன</span></label>
+        <label class="quiz-opt"><input type="radio" name="q2" value="c"><span data-en>Only work with LEDs</span><span data-ta>LED-களுடன் மட்டும் வேலை செய்கின்றன</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct!</span><span data-ta>✅ சரி!</span></div>
+      </div>
+
+      <div class="quiz-q" data-name="q3" data-correct="c">
+        <p class="q-text" data-en>3. Why are breadboards great for beginners?</p>
+        <p class="q-text" data-ta>3. ஆரம்பநிலையாளர்களுக்கு பிரெட்போர்டுகள் ஏன் சிறந்தவை?</p>
+        <label class="quiz-opt"><input type="radio" name="q3" value="a"><span data-en>They're the cheapest option</span><span data-ta>அவை மலிவானவை</span></label>
+        <label class="quiz-opt"><input type="radio" name="q3" value="b"><span data-en>They require soldering skill</span><span data-ta>அவைக்கு சோல்டரிங் திறமை தேவை</span></label>
+        <label class="quiz-opt"><input type="radio" name="q3" value="c"><span data-en>Mistakes can be undone instantly, no soldering</span><span data-ta>தவறுகளை உடனடியாக மாற்றலாம், சோல்டரிங் தேவையில்லை</span></label>
+        <div class="quiz-feedback"><span data-en>✅ Correct!</span><span data-ta>✅ சரி!</span></div>
+      </div>
+
+      <button class="btn btn-primary btn-block" data-quiz-check>
+        <span data-en>Check My Answers</span><span data-ta>எனது பதில்களை சரிபார்</span>
+      </button>
+      <p class="quiz-score center" style="display:none"></p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="concept-nav">
+    <a href="resistor.html" class="btn btn-ghost"><span data-en>← Resistor</span><span data-ta>← எதிர்ப்பான்</span></a>
+    <a href="../weeks/week1.html" class="btn btn-primary"><span data-en>Put it to work: Week 1 →</span><span data-ta>பயன்படுத்துங்கள்: வாரம் 1 →</span></a>
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

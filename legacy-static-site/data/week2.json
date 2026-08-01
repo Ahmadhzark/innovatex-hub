@@ -1,0 +1,9 @@
+{
+  "week": 2,
+  "status": "coming-soon",
+  "title": { "en": "Week 2 — IoT Dashboard & Cloud", "ta": "வாரம் 2 — IoT டாஷ்போர்டு & கிளவுட்" },
+  "teaser": {
+    "en": "Send live sensor data from your ESP32 to the cloud and watch it appear on a dashboard in real time.",
+    "ta": "உங்கள் ESP32-இலிருந்து நேரடி சென்சார் தரவை கிளவுட்டிற்கு அனுப்பி, அது நேரடியாக டாஷ்போர்டில் தோன்றுவதை பாருங்கள்."
+  }
+}
