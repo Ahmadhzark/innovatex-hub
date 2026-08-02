@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { ArrowRight, Cpu, Sparkles } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { HardwareVisual } from "@/components/hardware/HardwareVisual";
+import { HighlightsGallery } from "@/components/sections/HighlightsGallery";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const FLOATING = [
@@ -120,7 +121,7 @@ export function Hero() {
           </MagneticButton>
         </motion.div>
 
-        {/* Hero hardware */}
+        {/* Workshop highlights */}
         <motion.div
           style={{ y: boardY }}
           initial={{ opacity: 0, y: 60, scale: 0.94 }}
@@ -128,22 +129,7 @@ export function Hero() {
           transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="relative mx-auto mt-16 max-w-3xl"
         >
-          {/* Glow bed beneath the board */}
-          <div
-            aria-hidden
-            className="absolute -inset-x-10 -bottom-6 top-10 rounded-[3rem] bg-primary/18 blur-[80px]"
-          />
-          <HardwareVisual
-            slug="esp32"
-            priority
-            className="aspect-[16/10] rounded-[1.75rem] shadow-2xl shadow-black/60 ring-1 ring-white/10"
-          />
-          <p className="mono-label mt-4">
-            {t({
-              en: "ESP32 — the board at the centre of the program",
-              ta: "ESP32 — திட்டத்தின் மையத்தில் உள்ள போர்டு",
-            })}
-          </p>
+          <HighlightsGallery />
         </motion.div>
       </motion.div>
 
