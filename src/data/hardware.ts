@@ -342,6 +342,107 @@ export const HARDWARE: Hardware[] = [
     },
     photo: false,
   },
+
+  /* ---- Added for the full beginner curriculum ---- */
+  {
+    slug: "rgb-led",
+    name: "RGB LED",
+    category: "component",
+    spec: "3 LEDs in 1 · common cathode",
+    blurb: {
+      en: "Three LEDs — red, green, blue — in one bulb. Mix their brightness to make almost any colour.",
+      ta: "ஒரே பல்பில் மூன்று LED-கள் — சிவப்பு, பச்சை, நீலம். அவற்றின் பிரகாசத்தை கலந்து எந்த நிறத்தையும் உருவாக்கலாம்.",
+    },
+    photo: true,
+  },
+  {
+    slug: "push-button",
+    name: "Push Button",
+    category: "component",
+    spec: "Momentary · 4-pin",
+    blurb: {
+      en: "The simplest input there is — closes a circuit only while it's held down.",
+      ta: "மிக எளிய உள்ளீடு — அழுத்தும் போது மட்டும் சுற்றை மூடுகிறது.",
+    },
+    photo: false,
+  },
+  {
+    slug: "buzzer",
+    name: "Buzzer",
+    category: "component",
+    spec: "Active · ~2-5kHz tone",
+    blurb: {
+      en: "Turns an electrical signal into a beep — the go-to for alarms and alerts.",
+      ta: "மின் சமிக்ஞையை ஒலியாக மாற்றுகிறது — எச்சரிக்கைகளுக்கான பொதுவான தேர்வு.",
+    },
+    photo: true,
+  },
+  {
+    slug: "potentiometer",
+    name: "Potentiometer",
+    category: "component",
+    spec: "0-5V variable output",
+    blurb: {
+      en: "A knob that turns physical rotation into a changing voltage — how a volume dial works.",
+      ta: "சுழற்சியை மாறுபடும் மின்னழுத்தமாக மாற்றும் ஒரு நாப் — ஒலி அளவு கட்டுப்படுத்தி போல.",
+    },
+    photo: false,
+  },
+  {
+    slug: "ldr",
+    name: "LDR (Light Sensor)",
+    category: "sensor",
+    spec: "Resistance drops with light",
+    blurb: {
+      en: "A resistor that changes with light level — bright light lowers its resistance.",
+      ta: "ஒளியின் அளவுக்கு ஏற்ப மாறும் ஒரு எதிர்ப்பான் — பிரகாசமான ஒளி எதிர்ப்பை குறைக்கிறது.",
+    },
+    photo: true,
+  },
+  {
+    slug: "sound-sensor",
+    name: "Sound Sensor",
+    category: "sensor",
+    spec: "Microphone + comparator",
+    blurb: {
+      en: "Detects claps, knocks and loud noises above a threshold you can tune.",
+      ta: "கைதட்டல், தட்டல் மற்றும் சத்தமான ஒலிகளை கண்டறிகிறது.",
+    },
+    photo: false,
+  },
+  {
+    slug: "flame-sensor",
+    name: "Flame Sensor",
+    category: "sensor",
+    spec: "IR flame wavelength",
+    blurb: {
+      en: "Detects the infrared light a flame gives off — the sensor behind a fire-alarm project.",
+      ta: "தீ வெளியிடும் அகச்சிவப்பு ஒளியை கண்டறிகிறது — தீ எச்சரிக்கை திட்டத்தின் சென்சார்.",
+    },
+    photo: false,
+  },
+  {
+    slug: "soil-moisture-sensor",
+    name: "Soil Moisture Sensor",
+    category: "sensor",
+    spec: "Two probes · resistance",
+    blurb: {
+      en: "Measures how wet soil is — the sensor behind an automatic plant-watering project.",
+      ta: "மண் எவ்வளவு ஈரமாக உள்ளது என்பதை அளக்கிறது — தானியங்கி நீர்ப்பாசன திட்டத்தின் சென்சார்.",
+    },
+    photo: false,
+  },
+  {
+    slug: "rain-sensor",
+    name: "Rain Sensor",
+    category: "sensor",
+    spec: "Conductive board",
+    blurb: {
+      en: "Detects water droplets on its board — used to trigger a warning when rain starts.",
+      ta: "அதன் பலகையில் நீர் துளிகளை கண்டறிகிறது — மழை தொடங்கும்போது எச்சரிக்க பயன்படுகிறது.",
+    },
+    photo: false,
+  },
 ];
 
 /** Look up a single hardware entry. */

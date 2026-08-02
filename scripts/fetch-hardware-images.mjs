@@ -64,6 +64,17 @@ const TARGETS = [
   { slug: "oscilloscope", candidates: [], search: "digital oscilloscope" },
   { slug: "robot-chassis", candidates: [], search: "mobile robot chassis wheels" },
   { slug: "battery-pack", candidates: ["File:6x AA battery holder with DC plug.jpg"], search: "AA battery holder" },
+
+  /* ---- Full beginner curriculum additions ---- */
+  { slug: "rgb-led", candidates: [], search: "RGB LED diode" },
+  { slug: "push-button", candidates: [], search: "tactile push button switch electronics" },
+  { slug: "buzzer", candidates: [], search: "piezo buzzer electronic component" },
+  { slug: "potentiometer", candidates: [], search: "potentiometer knob electronic component" },
+  { slug: "ldr", candidates: [], search: "photoresistor LDR light dependent resistor" },
+  { slug: "sound-sensor", candidates: [], search: "sound detection sensor module" },
+  { slug: "flame-sensor", candidates: [], search: "flame sensor module infrared" },
+  { slug: "soil-moisture-sensor", candidates: [], search: "soil moisture sensor probe" },
+  { slug: "rain-sensor", candidates: [], search: "rain drop sensor module" },
 ];
 
 /** Strip the HTML Commons returns in extmetadata fields. */

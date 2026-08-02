@@ -71,12 +71,14 @@ export function ProjectsView() {
 
               return (
                 <motion.div
+                  id={project.slug}
                   key={project.slug}
                   layout
                   initial={{ opacity: 0, scale: 0.94 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.94 }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="scroll-mt-28"
                 >
                   <GlassCard glow="primary" className="flex h-full flex-col p-0">
                     <div className="relative">
@@ -88,7 +90,7 @@ export function ProjectsView() {
                       />
                       <span
                         className={cn(
-                          "absolute left-4 top-4 rounded-full border px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider backdrop-blur-md",
+                          "absolute left-4 top-4 rounded-full border px-2.5 py-1 font-mono text-xs font-bold tracking-wider backdrop-blur-md",
                           difficulty.tone,
                         )}
                       >
@@ -113,7 +115,7 @@ export function ProjectsView() {
                           {project.components.map((slug) => (
                             <span
                               key={slug}
-                              className="rounded-full border border-hairline px-2.5 py-1 font-mono text-[11px] text-faint"
+                              className="rounded-full border border-hairline px-2.5 py-1 font-mono text-xs text-faint"
                             >
                               {getHardware(slug)?.name ?? slug}
                             </span>
@@ -126,7 +128,7 @@ export function ProjectsView() {
                         {project.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold text-primary"
+                            className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary"
                           >
                             {skill}
                           </span>

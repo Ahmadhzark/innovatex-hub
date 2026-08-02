@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { ProgressWidget } from "@/components/sections/ProgressWidget";
 import { Stats } from "@/components/sections/Stats";
 import { Journey } from "@/components/sections/Journey";
 import { Modules } from "@/components/sections/Modules";
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <ProgressWidget />
       <Stats />
       <HardwareMarquee />
       <Journey />

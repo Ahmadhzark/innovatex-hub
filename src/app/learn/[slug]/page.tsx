@@ -18,6 +18,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: lesson.title.en,
     description: lesson.subtitle.en,
+    openGraph: {
+      type: "article",
+      title: lesson.title.en,
+      description: lesson.subtitle.en,
+    },
   };
 }
 

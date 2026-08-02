@@ -184,7 +184,7 @@ export function PortalView() {
                         {t(assignment.brief)}
                       </p>
                     </div>
-                    <span className="shrink-0 rounded-full border border-hairline px-3 py-1 font-mono text-[11px] text-faint">
+                    <span className="shrink-0 rounded-full border border-hairline px-3 py-1 font-mono text-xs text-faint">
                       {t(assignment.due)}
                     </span>
                   </div>

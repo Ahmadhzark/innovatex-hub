@@ -16,6 +16,9 @@ const ROUTES = [
   "/",
   "/learn/",
   "/learn/electricity/",
+  "/learn/motion-distance-sensors/",
+  "/learn/outputs-actuators/",
+  "/learn/uploading-code/",
   "/weeks/",
   "/weeks/1/",
   "/weeks/3/",
@@ -24,6 +27,7 @@ const ROUTES = [
   "/team/",
   "/about/",
   "/gallery/",
+  "/register/",
 ];
 
 // iPhone SE is the narrowest phone worth supporting.

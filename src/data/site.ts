@@ -12,6 +12,12 @@ export const SITE = {
   location: "Hemmathagama",
   year: 2026,
   contactEmail: "innovatex@example.com",
+  /**
+   * The Google Form students land on from /register. Leave empty until
+   * registration opens — the page shows a "coming soon" state instead of
+   * a broken button. See docs/adding-registration-link.md.
+   */
+  registrationFormUrl: "",
 } as const;
 
 export type NavItem = {

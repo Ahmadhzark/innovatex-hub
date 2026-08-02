@@ -13,6 +13,8 @@ type RevealProps = {
   /** Adds a blur-to-sharp transition for a softer entrance. */
   blur?: boolean;
   as?: "div" | "section" | "li" | "article";
+  /** Passed straight through — for scroll-to-anchor targets (e.g. search deep links). */
+  id?: string;
 };
 
 const OFFSET = {
@@ -36,6 +38,7 @@ export function Reveal({
   delay = 0,
   blur = true,
   as = "div",
+  id,
 }: RevealProps) {
   const reduceMotion = useReducedMotion();
   const offset = OFFSET[from];
@@ -64,6 +67,7 @@ export function Reveal({
 
   return (
     <MotionTag
+      id={id}
       className={cn(className)}
       variants={variants}
       initial="hidden"

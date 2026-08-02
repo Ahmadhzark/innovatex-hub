@@ -118,5 +118,23 @@
     "artist": "Evan-Amos",
     "license": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Electronics-White-Breadboard.jpg"
+  },
+  "rgb-led": {
+    "title": "File:5050 SMD RGB LED.png",
+    "artist": "Mister rf",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:5050_SMD_RGB_LED.png"
+  },
+  "buzzer": {
+    "title": "File:Electronic component piezo.jpg",
+    "artist": "me",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Electronic_component_piezo.jpg"
+  },
+  "ldr": {
+    "title": "File:Ranex Smartwares 6000.293 - board - motion sensor and photoresistor-5608.jpg",
+    "artist": "Raimond Spekking",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ranex_Smartwares_6000.293_-_board_-_motion_sensor_and_photoresistor-5608.jpg"
   }
 }

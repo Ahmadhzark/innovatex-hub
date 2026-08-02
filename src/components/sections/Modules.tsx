@@ -58,7 +58,7 @@ export function Modules() {
                     {module.topics.map((topic) => (
                       <li
                         key={topic}
-                        className="rounded-full border border-hairline px-2.5 py-1 font-mono text-[11px] tracking-wide text-faint"
+                        className="rounded-full border border-hairline px-2.5 py-1 font-mono text-xs tracking-wide text-faint"
                       >
                         {topic}
                       </li>

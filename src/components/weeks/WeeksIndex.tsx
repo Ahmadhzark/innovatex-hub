@@ -42,7 +42,7 @@ export function WeeksIndex() {
                     className={`aspect-16/9 rounded-b-none rounded-t-3xl ${live ? "" : "grayscale"}`}
                   />
                   <span
-                    className={`absolute left-4 top-4 rounded-full px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider backdrop-blur-md ${
+                    className={`absolute left-4 top-4 rounded-full px-2.5 py-1 font-mono text-xs font-bold tracking-wider backdrop-blur-md ${
                       live
                         ? "bg-primary/90 text-void"
                         : "bg-void/70 text-muted ring-1 ring-hairline"

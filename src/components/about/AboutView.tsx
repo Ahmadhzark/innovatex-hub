@@ -4,6 +4,7 @@ import { Mail, MapPin, ExternalLink } from "lucide-react";
 import { SITE, STATS } from "@/data/site";
 import { WEEKS } from "@/data/weeks";
 import { IMAGE_CREDITS, HARDWARE } from "@/data/hardware";
+import { FAQS } from "@/data/faq";
 import { Counter } from "@/components/ui/Counter";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -80,7 +81,7 @@ export function AboutView() {
                 <p className="font-mono text-sm font-bold text-primary">
                   W{week.number}
                 </p>
-                <p className="mt-1 text-[11px] leading-tight text-faint">
+                <p className="mt-1 text-xs leading-tight text-faint">
                   {t(week.title)}
                 </p>
               </div>
@@ -132,6 +133,35 @@ export function AboutView() {
                 ))}
               </ul>
             </GlassCard>
+          </div>
+        </section>
+
+        {/* ---------------- FAQ ---------------- */}
+        <section>
+          <SectionHeading
+            align="left"
+            eyebrow={{ en: "FAQ", ta: "கேள்விகள்" }}
+            title={{ en: "Common questions", ta: "பொதுவான கேள்விகள்" }}
+          />
+
+          <div className="mt-8 flex flex-col divide-y divide-hairline overflow-hidden rounded-2xl glass">
+            {FAQS.map((faq) => (
+              <details
+                key={faq.id}
+                id={`faq-${faq.id}`}
+                className="group scroll-mt-28 p-5 open:bg-white/2"
+              >
+                <summary className="flex min-h-8 cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-ink marker:content-none">
+                  {t(faq.question)}
+                  <span className="shrink-0 text-lg text-faint transition-transform duration-300 group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {t(faq.answer)}
+                </p>
+              </details>
+            ))}
           </div>
         </section>
 

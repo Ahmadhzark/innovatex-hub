@@ -4,9 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Languages, CircuitBoard } from "lucide-react";
+import { Menu, X, Languages, CircuitBoard, Search } from "lucide-react";
 import { NAV_ITEMS, SITE } from "@/data/site";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { SearchModal } from "@/components/search/SearchModal";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -14,6 +15,20 @@ export function Navbar() {
   const { lang, setLang, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // Cmd/Ctrl+K opens search from anywhere on the site.
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setMenuOpen(false);
+        setSearchOpen(true);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   // Condense the bar once the page has moved at all. The initial read is
   // deferred a frame so it doesn't setState synchronously during the effect.
@@ -101,6 +116,37 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <button
             type="button"
+            onClick={() => setSearchOpen(true)}
+            className="hidden min-h-11 items-center gap-2 rounded-full glass px-3.5 text-xs font-semibold text-faint transition-colors hover:border-primary/40 hover:text-ink sm:inline-flex"
+            aria-label={t({ en: "Search", ta: "தேடல்" })}
+          >
+            <Search className="size-3.5" />
+            <span className="hidden lg:inline">
+              {t({ en: "Search", ta: "தேடல்" })}
+            </span>
+            <kbd className="hidden rounded border border-hairline px-1.5 py-0.5 font-mono text-[10px] text-faint lg:inline">
+              ⌘K
+            </kbd>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
+            className="grid size-11 place-items-center rounded-full glass text-ink sm:hidden"
+            aria-label={t({ en: "Search", ta: "தேடல்" })}
+          >
+            <Search className="size-4" />
+          </button>
+
+          <Link
+            href="/register"
+            className="hidden min-h-11 items-center rounded-full bg-primary px-4 text-sm font-semibold text-void transition-shadow hover:shadow-[0_0_20px_-4px_var(--color-primary)] sm:inline-flex"
+          >
+            {t({ en: "Register", ta: "பதிவு" })}
+          </Link>
+
+          <button
+            type="button"
             onClick={() => setLang(lang === "en" ? "ta" : "en")}
             className="inline-flex min-h-11 items-center gap-1.5 rounded-full glass px-3.5 text-xs font-semibold text-ink transition-colors hover:border-primary/40"
             aria-label="Toggle language"
@@ -143,6 +189,21 @@ export function Navbar() {
               className="relative flex h-full flex-col overflow-y-auto px-5 pt-24 pb-10"
               aria-label="Mobile"
             >
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="mb-6"
+              >
+                <Link
+                  href="/register"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex min-h-12 items-center justify-center rounded-full bg-primary text-base font-bold text-void shadow-[0_0_24px_-6px_var(--color-primary)]"
+                >
+                  {t({ en: "Register for InnovateX 3.0", ta: "InnovateX 3.0-க்கு பதிவு செய்யுங்கள்" })}
+                </Link>
+              </motion.div>
+
               {NAV_ITEMS.map((item, i) => (
                 <motion.div
                   key={item.href}
@@ -177,6 +238,8 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }

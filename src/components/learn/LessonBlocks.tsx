@@ -7,12 +7,16 @@ import {
   Lightbulb,
   Info,
   TriangleAlert,
+  Sparkles,
+  Cpu,
   type LucideIcon,
 } from "lucide-react";
 import type { LessonBlock } from "@/data/lessons";
 import { HardwareVisual } from "@/components/hardware/HardwareVisual";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
+import { CodeBlock } from "@/components/ui/CodeBlock";
+import { CircuitDiagram } from "@/components/learn/CircuitDiagram";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -145,6 +149,101 @@ export function LessonBlockView({ block }: { block: LessonBlock }) {
         </Reveal>
       );
     }
+
+    case "heading":
+      return (
+        <Reveal className="mt-14 mb-4 first:mt-0">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">
+            {t(block.text)}
+          </h2>
+        </Reveal>
+      );
+
+    case "code":
+      return (
+        <Reveal className="my-8">
+          <CodeBlock filename={block.filename} code={block.content} />
+        </Reveal>
+      );
+
+    case "wiring":
+      return (
+        <Reveal className="my-8">
+          <CircuitDiagram data={block.data} />
+          {block.caption && (
+            <p className="mono-label mt-3 text-center">{t(block.caption)}</p>
+          )}
+        </Reveal>
+      );
+
+    case "component":
+      return (
+        <Reveal id={block.slug} className="my-10 scroll-mt-28" as="article">
+          <GlassCard interactive={false} className="overflow-hidden p-0">
+            <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[220px_1fr]">
+              <HardwareVisual
+                slug={block.slug}
+                size="sm"
+                className="aspect-square rounded-2xl lg:aspect-auto lg:h-full"
+              />
+
+              <div>
+                <h3 className="font-display text-xl font-bold text-ink sm:text-2xl">
+                  {block.name}
+                </h3>
+
+                <div className="mt-4 flex gap-3">
+                  <Cpu className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <p className="text-sm leading-relaxed text-muted sm:text-base">
+                    {t(block.whatItIs)}
+                  </p>
+                </div>
+
+                <div className="mt-3 flex gap-3">
+                  <Sparkles className="mt-0.5 size-4 shrink-0 text-secondary" />
+                  <p className="text-sm leading-relaxed text-muted sm:text-base">
+                    <span className="font-semibold text-ink">
+                      {t({ en: "Real-world example: ", ta: "நிஜ உலக உதாரணம்: " })}
+                    </span>
+                    {t(block.example)}
+                  </p>
+                </div>
+
+                {block.pins && block.pins.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {block.pins.map((pin) => (
+                      <span
+                        key={pin}
+                        className="rounded-full border border-hairline px-2.5 py-1 font-mono text-xs text-faint"
+                      >
+                        {pin}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {block.wiring && (
+              <div className="border-t border-hairline p-6 sm:p-8">
+                <p className="mono-label mb-4">
+                  {t({ en: "HOW TO WIRE IT", ta: "இணைப்பு முறை" })}
+                </p>
+                <CircuitDiagram data={block.wiring} />
+              </div>
+            )}
+
+            {block.code && (
+              <div className="border-t border-hairline p-6 sm:p-8">
+                <p className="mono-label mb-4">
+                  {t({ en: "STARTER CODE", ta: "தொடக்க குறியீடு" })}
+                </p>
+                <CodeBlock filename={block.code.filename} code={block.code.content} />
+              </div>
+            )}
+          </GlassCard>
+        </Reveal>
+      );
 
     default:
       return null;

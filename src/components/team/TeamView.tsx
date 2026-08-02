@@ -96,7 +96,7 @@ function PersonCard({ person }: { person: Person }) {
           {person.expertise.map((skill) => (
             <span
               key={skill}
-              className="rounded-full border border-hairline px-2.5 py-1 font-mono text-[11px] text-faint"
+              className="rounded-full border border-hairline px-2.5 py-1 font-mono text-xs text-faint"
             >
               {skill}
             </span>

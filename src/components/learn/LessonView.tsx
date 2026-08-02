@@ -1,16 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Clock } from "lucide-react";
 import { LESSONS, type Lesson } from "@/data/lessons";
 import { LessonBlockView } from "./LessonBlocks";
 import { LessonQuiz } from "./LessonQuiz";
 import { HardwareVisual } from "@/components/hardware/HardwareVisual";
 import { Reveal } from "@/components/ui/Reveal";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { useProgress } from "@/lib/progress";
 
 export function LessonView({ lesson }: { lesson: Lesson }) {
   const { t } = useLanguage();
+  const { isComplete, hydrated } = useProgress();
+  const done = hydrated && isComplete(lesson.slug);
 
   const index = LESSONS.findIndex((l) => l.slug === lesson.slug);
   const previous = index > 0 ? LESSONS[index - 1] : null;
@@ -43,6 +46,12 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
               <Clock className="size-3.5" />
               {lesson.duration} min
             </span>
+            {done && (
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <CheckCircle2 className="size-3.5" />
+                {t({ en: "Completed", ta: "முடிந்தது" })}
+              </span>
+            )}
           </div>
 
           <h1 className="mt-4 text-[clamp(2.25rem,6vw,3.75rem)] font-bold">
@@ -72,7 +81,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
 
       {/* Quiz */}
       <div className="mx-auto max-w-3xl px-5 py-10 sm:px-8">
-        <LessonQuiz questions={lesson.quiz} />
+        <LessonQuiz questions={lesson.quiz} lessonSlug={lesson.slug} />
       </div>
 
       {/* Prev / next */}
