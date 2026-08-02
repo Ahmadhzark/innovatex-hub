@@ -361,8 +361,8 @@ export function WeekView({ week }: { week: Week }) {
             ) : (
               <p className="mt-6 rounded-2xl border border-dashed border-hairline-strong p-6 text-sm text-faint">
                 {t({
-                  en: "The quiz link hasn't been added yet — paste the Google Form embed URL into this week's entry in src/data/weeks.ts.",
-                  ta: "வினாடி வினா இணைப்பு இன்னும் சேர்க்கப்படவில்லை.",
+                  en: "The quiz for this session will be published here shortly.",
+                  ta: "இந்த அமர்வுக்கான வினாடி வினா விரைவில் இங்கே வெளியிடப்படும்.",
                 })}
               </p>
             )}

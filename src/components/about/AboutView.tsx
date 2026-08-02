@@ -1,9 +1,8 @@
 "use client";
 
-import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { SITE, STATS } from "@/data/site";
 import { WEEKS } from "@/data/weeks";
-import { IMAGE_CREDITS, HARDWARE } from "@/data/hardware";
 import { FAQS } from "@/data/faq";
 import { Counter } from "@/components/ui/Counter";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -15,10 +14,6 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export function AboutView() {
   const { t } = useLanguage();
-
-  const credits = Object.entries(IMAGE_CREDITS).sort(([a], [b]) =>
-    a.localeCompare(b),
-  );
 
   return (
     <>
@@ -192,66 +187,6 @@ export function AboutView() {
           </GlassCard>
         </section>
 
-        {/* ---------------- Image credits ---------------- */}
-        <section id="credits" className="scroll-mt-28">
-          <SectionHeading
-            align="left"
-            eyebrow={{ en: "IMAGE CREDITS", ta: "பட உரிமை" }}
-            title={{ en: "Photography attribution", ta: "புகைப்பட உரிமை" }}
-            description={{
-              en: "Component photography is sourced from Wikimedia Commons under free licences. Each photo, its author and its licence are listed below.",
-              ta: "கூறுகளின் புகைப்படங்கள் Wikimedia Commons-இலிருந்து இலவச உரிமங்களின் கீழ் பெறப்பட்டவை.",
-            }}
-          />
-
-          <div className="mt-8 overflow-hidden rounded-2xl glass">
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[640px] text-left text-sm">
-                <thead>
-                  <tr className="border-b border-hairline">
-                    <th className="mono-label px-4 py-3">Component</th>
-                    <th className="mono-label px-4 py-3">Author</th>
-                    <th className="mono-label px-4 py-3">Licence</th>
-                    <th className="mono-label px-4 py-3">Source</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {credits.map(([slug, credit]) => {
-                    const name =
-                      HARDWARE.find((h) => h.slug === slug)?.name ?? slug;
-                    return (
-                      <tr
-                        key={slug}
-                        className="border-b border-hairline last:border-0"
-                      >
-                        <td className="px-4 py-3 font-medium text-ink">
-                          {name}
-                        </td>
-                        <td className="max-w-[220px] truncate px-4 py-3 text-muted">
-                          {credit.artist}
-                        </td>
-                        <td className="px-4 py-3 font-mono text-xs text-faint">
-                          {credit.license}
-                        </td>
-                        <td className="px-4 py-3">
-                          <a
-                            href={credit.source}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="-my-3 inline-flex min-h-11 items-center gap-1 py-3 text-primary hover:opacity-80"
-                          >
-                            Commons
-                            <ExternalLink className="size-3" />
-                          </a>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );

@@ -49,7 +49,7 @@ Free sources with licences that permit reuse:
 - **[Poly Haven](https://polyhaven.com)** — no components, but good for materials
 - **Manufacturer sites** — Espressif and Arduino publish CAD for several boards
 
-Check the licence before using anything, and add the attribution to `src/data/image-credits.json` so it shows on **/about#credits** alongside the photography.
+Check the licence of any model before using it.
 
 ---
 

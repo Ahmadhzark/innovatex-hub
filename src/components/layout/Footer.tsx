@@ -29,7 +29,6 @@ const COLUMNS = [
     links: [
       { href: "/about", label: { en: "About", ta: "பற்றி" } },
       { href: "/gallery", label: { en: "Gallery", ta: "படத்தொகுப்பு" } },
-      { href: "/about#credits", label: { en: "Image Credits", ta: "பட உரிமை" } },
     ],
   },
 ];

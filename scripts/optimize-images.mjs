@@ -22,7 +22,7 @@ const BLUR_FILE = path.join(process.cwd(), "src", "data", "image-blur.json");
 async function main() {
   const files = (await readdir(DIR)).filter((f) => /\.jpe?g$/i.test(f));
   if (!files.length) {
-    console.log("no source JPEGs found — run fetch-hardware-images.mjs first");
+    console.log("no source JPEGs found in public/images/hardware");
     return;
   }
 

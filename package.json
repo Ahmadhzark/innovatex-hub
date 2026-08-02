@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "images:fetch": "node scripts/fetch-hardware-images.mjs",
     "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
