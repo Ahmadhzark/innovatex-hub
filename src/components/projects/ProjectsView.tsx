@@ -1,32 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { PROJECTS, DIFFICULTY_LABEL, type Project } from "@/data/projects";
+import Link from "next/link";
+import { ArrowRight, Clock } from "lucide-react";
+import { PROJECTS } from "@/data/projects";
 import { getHardware } from "@/data/hardware";
 import { HardwareVisual } from "@/components/hardware/HardwareVisual";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { Reveal } from "@/components/ui/Reveal";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { cn } from "@/lib/utils";
 
-type Filter = "all" | Project["difficulty"];
-
-const FILTERS: Array<{ id: Filter; label: { en: string; ta: string } }> = [
-  { id: "all", label: { en: "All", ta: "அனைத்தும்" } },
-  { id: "beginner", label: { en: "Beginner", ta: "ஆரம்பநிலை" } },
-  { id: "intermediate", label: { en: "Intermediate", ta: "இடைநிலை" } },
-  { id: "advanced", label: { en: "Advanced", ta: "மேம்பட்ட" } },
-];
+function formatBuildTime(minutes: number) {
+  if (minutes < 60) return { en: `${minutes} min`, ta: `${minutes} நிமிடம்` };
+  const hours = minutes / 60;
+  const label = Number.isInteger(hours) ? `${hours}` : `${hours.toFixed(1)}`;
+  return { en: `${label} hr build`, ta: `${label} மணி` };
+}
 
 export function ProjectsView() {
   const { t } = useLanguage();
-  const [filter, setFilter] = useState<Filter>("all");
-
-  const visible =
-    filter === "all"
-      ? PROJECTS
-      : PROJECTS.filter((project) => project.difficulty === filter);
 
   return (
     <>
@@ -34,113 +26,64 @@ export function ProjectsView() {
         eyebrow={{ en: "PROJECT SHOWCASE", ta: "திட்ட காட்சியகம்" }}
         title={{ en: "Things worth building", ta: "கட்டமைக்கத் தகுந்தவை" }}
         description={{
-          en: "Every project here can be built with the components in the workshop kit. Pick one, or use them as inspiration for your team's final build.",
-          ta: "இங்குள்ள ஒவ்வொரு திட்டத்தையும் பட்டறை கிட்டில் உள்ள பாகங்களால் கட்டமைக்க முடியும்.",
+          en: "Every project here can be built with the components in the workshop kit — each one comes with a full guide: wiring, code, testing and troubleshooting.",
+          ta: "இங்குள்ள ஒவ்வொரு திட்டத்தையும் பட்டறை கிட்டில் உள்ள பாகங்களால் கட்டமைக்க முடியும் — ஒவ்வொன்றுக்கும் முழு வழிகாட்டி உள்ளது.",
         }}
-      >
-        {/* Difficulty filter */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          {FILTERS.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => setFilter(item.id)}
-              className={cn(
-                "relative inline-flex min-h-11 items-center justify-center rounded-full px-4 text-sm font-medium transition-colors duration-300",
-                filter === item.id ? "text-void" : "text-muted hover:text-ink",
-              )}
-            >
-              {filter === item.id && (
-                <motion.span
-                  layoutId="project-filter"
-                  className="absolute inset-0 -z-10 rounded-full bg-primary"
-                  transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                />
-              )}
-              {t(item.label)}
-            </button>
-          ))}
-        </div>
-      </PageHeader>
+      />
 
       <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">
-        <motion.div layout className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {visible.map((project) => {
-              const difficulty = DIFFICULTY_LABEL[project.difficulty];
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS.map((project, i) => (
+            <Reveal key={project.slug} delay={(i % 3) * 0.06}>
+              <Link href={`/projects/${project.slug}`} className="block h-full">
+                <GlassCard glow="primary" className="flex h-full flex-col p-0">
+                  <HardwareVisual
+                    slug={project.hero}
+                    size="sm"
+                    disable3D
+                    className="aspect-16/10 rounded-b-none rounded-t-3xl"
+                  />
 
-              return (
-                <motion.div
-                  id={project.slug}
-                  key={project.slug}
-                  layout
-                  initial={{ opacity: 0, scale: 0.94 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.94 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  className="scroll-mt-28"
-                >
-                  <GlassCard glow="primary" className="flex h-full flex-col p-0">
-                    <div className="relative">
-                      <HardwareVisual
-                        slug={project.hero}
-                        size="sm"
-                        disable3D
-                        className="aspect-16/10 rounded-b-none rounded-t-3xl"
-                      />
-                      <span
-                        className={cn(
-                          "absolute left-4 top-4 rounded-full border px-2.5 py-1 font-mono text-xs font-bold tracking-wider backdrop-blur-md",
-                          difficulty.tone,
-                        )}
-                      >
-                        {t(difficulty.label).toUpperCase()}
-                      </span>
-                    </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-display text-lg font-bold">
+                      {t(project.title)}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                      {t(project.description)}
+                    </p>
 
-                    <div className="flex flex-1 flex-col p-6">
-                      <h3 className="font-display text-lg font-bold">
-                        {t(project.title)}
-                      </h3>
-                      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
-                        {t(project.description)}
+                    <div className="mt-5">
+                      <p className="mono-label mb-2">
+                        {t({ en: "USES", ta: "பயன்படுத்துவது" })}
                       </p>
-
-                      {/* Components used */}
-                      <div className="mt-5">
-                        <p className="mono-label mb-2">
-                          {t({ en: "USES", ta: "பயன்படுத்துவது" })}
-                        </p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.components.map((slug) => (
-                            <span
-                              key={slug}
-                              className="rounded-full border border-hairline px-2.5 py-1 font-mono text-xs text-faint"
-                            >
-                              {getHardware(slug)?.name ?? slug}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Skills taught */}
-                      <div className="mt-4 flex flex-wrap gap-1.5">
-                        {project.skills.map((skill) => (
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.components.map((slug) => (
                           <span
-                            key={skill}
-                            className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary"
+                            key={slug}
+                            className="rounded-full border border-hairline px-2.5 py-1 font-mono text-xs text-faint"
                           >
-                            {skill}
+                            {getHardware(slug)?.name ?? slug}
                           </span>
                         ))}
                       </div>
                     </div>
-                  </GlassCard>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+
+                    <div className="mt-5 flex items-center justify-between border-t border-hairline pt-4">
+                      <span className="inline-flex items-center gap-1.5 text-xs text-faint">
+                        <Clock className="size-3.5" />
+                        {t(formatBuildTime(project.buildTime))}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                        {t({ en: "View Project", ta: "திட்டத்தைப் பார்" })}
+                        <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </div>
+                </GlassCard>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </section>
     </>
   );

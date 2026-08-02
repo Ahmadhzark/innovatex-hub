@@ -24,6 +24,8 @@ const ROUTES = [
   "/weeks/3/",
   "/portal/",
   "/projects/",
+  "/projects/integrated-smart-robot/",
+  "/projects/line-follower-robot/",
   "/team/",
   "/about/",
   "/gallery/",

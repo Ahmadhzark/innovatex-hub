@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-downloads.mjs && next build",
     "start": "next start",
     "lint": "eslint",
+    "downloads:build": "node scripts/generate-downloads.mjs",
     "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {

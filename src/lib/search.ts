@@ -1,7 +1,7 @@
 import Fuse, { type IFuseOptions } from "fuse.js";
 import { LESSONS } from "@/data/lessons";
 import { HARDWARE } from "@/data/hardware";
-import { PROJECTS, DIFFICULTY_LABEL } from "@/data/projects";
+import { PROJECTS, CATEGORY_LABEL } from "@/data/projects";
 import { RESOURCES } from "@/data/portal";
 import { FAQS } from "@/data/faq";
 import type { Lang } from "@/components/providers/LanguageProvider";
@@ -95,8 +95,8 @@ export function buildSearchDocs(lang: Lang): SearchDoc[] {
       type: "project",
       title: t(project.title),
       subtitle: t(project.description),
-      url: `/projects#${project.slug}`,
-      keywords: `project build ${DIFFICULTY_LABEL[project.difficulty].label.en} ${project.skills.join(" ")}`,
+      url: `/projects/${project.slug}`,
+      keywords: `project build ${CATEGORY_LABEL[project.category].en} ${project.skills.join(" ")}`,
     });
   }
 

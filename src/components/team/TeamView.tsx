@@ -110,7 +110,7 @@ function ResourcePersonCard({ person }: { person: ResourcePerson }) {
         {week && (
           <Link
             href={`/weeks/${week.number}`}
-            className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-primary"
+            className="mt-auto inline-flex min-h-11 items-center gap-1.5 pt-4 text-sm font-semibold text-primary"
           >
             {t({ en: "View the session", ta: "அமர்வைப் பார்க்க" })}
             <ArrowRight className="size-4" />
